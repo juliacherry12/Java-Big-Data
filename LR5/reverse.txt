@@ -1,0 +1,23 @@
+public class LR5_V2 {
+    public static void main(String[] args) {
+        BookCase bookCase1 = new BookCase("Dream", 210);
+        System.out.println("Model: " + bookCase1.modelCupboard);
+        System.out.println("Hight: " + bookCase1.hightCupboard);
+        //bookCase1.toMove();
+        //bookCase1.toPaint();
+        bookCase1.openDoor();
+
+        try {
+            bookCase1.changePaint("7");
+        } catch (MyException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        try{
+          bookCase1.readModel();
+        } catch (MyException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        System.out.println(bookCase1.getModelCupboard());
+    }
+}
